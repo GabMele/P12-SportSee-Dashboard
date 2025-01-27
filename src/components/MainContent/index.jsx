@@ -1,31 +1,15 @@
+// src/components/MainContent.jsx
 import DataLoader from './DataLoader';
-import DataDisplay from './DataDisplay';
-import UserCharts from './UserCharts';
+import DataRawDisplay from './DataRawDisplay';
+// import UserCharts from './UserCharts';
 
 const MainContent = () => {
   return (
     <DataLoader>
-      {({ userData, userActivity, userAverageSession, userPerformance, error }) => (
+      {({ data, error, loading }) => (
         <>
-          <DataDisplay
-            userData={userData}
-            userActivity={userActivity}
-            userAverageSession={userAverageSession}
-            userPerformance={userPerformance}
-            error={error}
-          />
-          <div className="welcome">
-            <h1>Bonjour <span className="welcomeName">{userData?.userInfos?.firstName}</span></h1>
-            <p>
-                Félicitation ! Vous avez explosé vos objectifs hier 👏
-            </p>
-          </div>
-          <UserCharts
-            userData={userData}
-            userActivity={userActivity}
-            userAverageSession={userAverageSession}
-            userPerformance={userPerformance}
-          />
+          <DataRawDisplay data={data} error={error} loading={loading} />
+          {/* <UserCharts data={data} /> */}
         </>
       )}
     </DataLoader>

@@ -22,32 +22,10 @@ import styles from './MainContent.module.scss';
 const UserCharts = ({ userData, userActivity, userAverageSession, userPerformance }) => {
   return (
     <main className={styles.charts}>
-      <h2>Charts</h2>
-
-      {/* Today Score */}
-      <section className={styles.chartContainer}>
-        <h3>Today’s Score</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <RadialBarChart
-            innerRadius="10%"
-            outerRadius="80%"
-            data={
-              userData?.todayScore
-                ? [{ name: 'Score', value: userData.todayScore * 100, fill: '#8884d8' }]
-                : [{ name: 'Score', value: 0, fill: '#8884d8' }]
-            }
-            startAngle={90}
-            endAngle={450}
-          >
-            <RadialBar minAngle={15} dataKey="value" />
-            <Tooltip />
-          </RadialBarChart>
-        </ResponsiveContainer>
-      </section>
 
       {/* Daily Activity */}
       <section className={styles.chartContainer}>
-        <h3>Daily Activity</h3>
+        <h3>Activité quotidienne</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={userActivity?.sessions || []}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -94,6 +72,28 @@ const UserCharts = ({ userData, userActivity, userAverageSession, userPerformanc
           </RadarChart>
         </ResponsiveContainer>
       </section>
+
+      {/* Today Score */}
+      <section className={styles.chartContainer}>
+        <h3>Today’s Score</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <RadialBarChart
+            innerRadius="10%"
+            outerRadius="80%"
+            data={
+              userData?.todayScore
+                ? [{ name: 'Score', value: userData.todayScore * 100, fill: '#8884d8' }]
+                : [{ name: 'Score', value: 0, fill: '#8884d8' }]
+            }
+            startAngle={90}
+            endAngle={450}
+          >
+            <RadialBar minAngle={15} dataKey="value" />
+            <Tooltip />
+          </RadialBarChart>
+        </ResponsiveContainer>
+      </section>
+
     </main>
   );
 };

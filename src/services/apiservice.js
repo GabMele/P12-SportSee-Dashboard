@@ -1,20 +1,29 @@
-// sportsee-frontend/src/services/apiservice.js
+// src/services/apiService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000';
+const api = axios.create({
+  baseURL: 'http://localhost:3000',
+  timeout: 3000,
+});
 
-export const getUserData = (userId) => {
-  return axios.get(`${API_URL}/user/${userId}`);
-};
+export const fetchUserData = async (userId) => {
+  try {
+    const [user, activity, averageSessions, performance] = 
+      await axios.all([
+      api.get(`/user/${userId}`),
+      api.get(`/user/${userId}/activity`),
+      api.get(`/user/${userId}/average-sessions`),
+      api.get(`/user/${userId}/performance`),
+    ]);
 
-export const getUserActitivy = (userId) => {
-    return axios.get(`${API_URL}/user/${userId}/activity`);
-  };
-
-export const getUserAverageSession = (userId) => {
-    return axios.get(`${API_URL}/user/${userId}/average-sessions`);
-};
-
-export const getUserPerformance = (userId) => {
-  return axios.get(`${API_URL}/user/${userId}/performance`);
+    return {
+      user: user.data.data,
+      activity: activity.data.data,
+      averageSessions: averageSessions.data.data,
+      performance: performance.data.data,
+    };
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    throw new Error('Failed to fetch user data');
+  }
 };
