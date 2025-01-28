@@ -1,5 +1,11 @@
 // src/services/dataFormatters.js
-import { currentTranslations } from '../config/translations';
+import CONFIG from '../config/constants';
+
+const {  
+  DAYS_ABREVIATIONS,
+  PERFORMANCE_LABELS
+} = CONFIG;
+
 
 // Format user personal informations
 const formatUserData = ({ userInfos, todayScore, score, keyData }) => ({
@@ -29,15 +35,15 @@ const formatUserActivity = ({ sessions }) => ({
 // Format user average session data
 const formatUserAverageSessions = ({ sessions }) =>
   sessions.map(({ day, sessionLength }) => ({
-    day: currentTranslations.SESSION_DAYS[day], 
+    day: DAYS_ABREVIATIONS[day-1],
     sessionLength,
   }));
 
 // Format user performance data
 const formatUserPerformance = ({ data }) => ({
-  kind: Object.values(currentTranslations.PERFORMANCE_KINDS), 
+  kind: Object.values(PERFORMANCE_LABELS), 
   data: data.map(({ kind: kindIndex, value }) => ({
-    kind: currentTranslations.PERFORMANCE_KINDS[kindIndex], 
+    kind: PERFORMANCE_LABELS[kindIndex], 
     value,
   })),
 });

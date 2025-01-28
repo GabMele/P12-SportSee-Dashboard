@@ -17,10 +17,9 @@ const useUserData = () => {
   useEffect(() => {
     const loadData = async () => {
       const userId = getUserId();
-
       try {
-        const { user, activity, averageSessions, performance } = await fetchUserData(userId);
-
+        const { user, activity, averageSessions, performance } 
+          = await fetchUserData(userId);
         setData({
           user: formatUserData(user),
           activity: formatUserActivity(activity),
@@ -28,7 +27,7 @@ const useUserData = () => {
           performance: formatUserPerformance(performance),
         });
       } catch (err) {
-        setError(err.message);
+        setError(err.message + 'With stack: ' + err.stack);
       } finally {
         setLoading(false);
       }
