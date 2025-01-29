@@ -2,7 +2,7 @@
 import WorkInProgress from '@/components/WorkInProgress';
 
 const Settings = () => {
-  return <WorkInProgress title="Settings" />;
+  return <WorkInProgress title="Réglage" />;
 };
 
 export default Settings;

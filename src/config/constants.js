@@ -25,12 +25,15 @@ const TRANSLATIONS = {
     }
   };
 
-const LANGUAGE = 'FR';
+export const getLanguage = () => {
+  const language = localStorage.getItem('language');
+  return language ? language : 'FR';
+};
 
 const CONFIG = {
     API_BASE_URL: 'http://localhost:3000',
-    DAYS_ABREVIATIONS: TRANSLATIONS.DAYS_ABREVIATIONS[LANGUAGE],
-    PERFORMANCE_LABELS: TRANSLATIONS.PERFORMANCE_LABELS[LANGUAGE],
+    DAYS_ABREVIATIONS: TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()],
+    PERFORMANCE_LABELS: TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()],
 };
 
 export default CONFIG;

@@ -41,7 +41,6 @@ const formatUserAverageSessions = ({ sessions }) =>
 
 // Format user performance data
 const formatUserPerformance = ({ data }) => ({
-  kind: Object.values(PERFORMANCE_LABELS), 
   data: data.map(({ kind: kindIndex, value }) => ({
     kind: PERFORMANCE_LABELS[kindIndex], 
     value,

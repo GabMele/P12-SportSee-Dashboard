@@ -1,4 +1,4 @@
-// src/components/MainContent.jsx
+// src/components/MainContent/index.jsx
 import DataLoader from './DataLoader';
 import DataRawDisplay from './DataRawDisplay';
 // import UserCharts from './UserCharts';

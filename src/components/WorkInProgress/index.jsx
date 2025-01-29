@@ -13,7 +13,7 @@ const WorkInProgress = ({ title, children }) => {
           </div>
         )}
         <div className={styles.wipMessage}>
-          <p>🚧 Work in Progress 🚧</p>
+          <p>🚧 Cette page n&apos;est pas disponible pour l&apos;instant 🚧</p>
         </div>
       </div>
     </div>
