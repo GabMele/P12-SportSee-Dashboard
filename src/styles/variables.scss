@@ -1,0 +1,33 @@
+// src/styles/variables.scss
+
+/**
+ * SCSS variables for the application.
+ * 
+ * This file contains all the global variables used throughout the app:
+ * colors, font sizes, and breakpoint. These variables allow for 
+ * consistent design and easy adjustments across the app, making it more 
+ * maintainable and adaptable to different screen sizes.
+ * 
+ * @namespace Variables
+ */
+
+// Breakpoints
+$breakpoint-mobile: 640px;
+
+// SCSS Variables
+// $primary-color: #222222; // Primary color used for key elements
+// $secondary-color: #eaeaea; // Secondary color for backgrounds or borders
+$background-color: #ffffff; // Background color of the app
+$text-color: #222; // Default text color
+// $highlight-color: #FFFFFF; // Highlight color for emphasized text
+// $highlight-background: $primary-color; // Background color for highlighted elements
+
+// Font Sizes
+$font-size-x-small: 0.65rem; // Extra small font size
+$font-size-small: 0.85rem; // Small font size
+$font-size-medium: 1rem; // Medium font size (default)
+$font-size-large: 1.5rem; // Large font size
+$font-size-x-large: 2.1rem; // Extra large font size
+
+$font-weight-regular: 400; // Medium font weight
+$font-weight-bold: 700; // Bold font weight

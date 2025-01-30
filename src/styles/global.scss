@@ -1,1 +1,56 @@
-// 
+// src/styles/global.scss
+
+/**
+ * Global SCSS file for the application.
+ * 
+ * This file imports the necessary variables and defines global styles 
+ * for the application. 
+ * 
+ * @namespace GlobalStyles
+ */
+
+ @use "./variables.scss" as variables;
+
+
+// ==============================
+ // Global SCSS File
+ // ==============================
+ 
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+ 
+ // ==============================
+ // Global Box-Sizing
+ // ------------------------------
+ 
+ * {
+  box-sizing: border-box;
+}
+
+ *:before,
+ *:after {
+    box-sizing: initial; /* or 'content-box' */
+ }
+
+ svg, i {
+  box-sizing: content-box !important; // needed for icons in react-icons
+}
+
+ // ==============================
+ // Global Styles
+ // ------------------------------
+ 
+ html, body, #root { 
+   margin: 0;
+   padding: 0;
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ body {
+   font-family: "Roboto", sans-serif;
+   color: variables.$text-color;
+   background-color: variables.$background-color;
+   font-size: variables.$font-size-small;
+   font-weight: variables.$font-weight-regular;
+ }

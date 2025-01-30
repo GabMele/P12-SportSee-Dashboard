@@ -1,0 +1,59 @@
+// src/components/MainContent/KeyDataSidebar/KeyDataSidebar.module.scss
+.keyDataSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Space between each key data item
+    padding: 20px;
+    background-color: #fbfbfb; // Light background for the sidebar
+    border-radius: 10px; // Rounded corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  }
+  
+  .keyDataItem {
+    display: flex;
+    align-items: center;
+    gap: 15px; // Space between icon and text
+    padding: 10px;
+    background-color: #ffffff; // White background for each item
+    border-radius: 5px; // Rounded corners for each item
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Subtle shadow for each item
+  }
+  
+// KeyDataSidebar.module.scss
+.icon {
+    font-size: 24px;
+    padding: 12px; // Add padding for background visibility
+    border-radius: 8px; // Optional: Rounded corners for the icon background
+  
+    // Dynamically generated classes (lowercase)
+    &.calorieCount { 
+      color: #ff0101; 
+      background-color: rgba(255, 0, 0, 0.1); // Light red background
+    }
+    &.proteinCount { 
+      color: #4ab8ff; 
+      background-color: rgba(74, 184, 255, 0.1); // Light blue background
+    }
+    &.carbohydrateCount { 
+      color: #fdcc0c; 
+      background-color: rgba(253, 204, 12, 0.1); // Light yellow background
+    }
+    &.lipidCount { 
+      color: #fd5181; 
+      background-color: rgba(253, 81, 129, 0.1); // Light pink background
+    }
+  }
+  
+  .keyDataValue {
+    font-size: 18px; // Size of the value text
+    font-weight: bold; // Bold for emphasis
+    color: #282d30; // Dark color for the value
+    margin: 0; // Remove default margin
+  }
+  
+  .keyDataLabel {
+    font-size: 14px; // Size of the label text
+    color: #74798c; // Lighter color for the label
+    margin: 0; // Remove default margin
+  }
+

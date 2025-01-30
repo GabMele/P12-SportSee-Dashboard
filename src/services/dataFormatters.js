@@ -12,7 +12,7 @@ const formatUserData = ({ userInfos, todayScore, score, keyData }) => ({
   firstName: userInfos.firstName,
   lastName: userInfos.lastName,
   age: userInfos.age,
-  todayScore: todayScore || score,
+  todayScore: todayScore !== undefined ? todayScore : score,
   keyData: {
     calorieCount: keyData.calorieCount,
     proteinCount: keyData.proteinCount,
