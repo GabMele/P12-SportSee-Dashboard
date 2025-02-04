@@ -1,12 +1,9 @@
 import PropTypes from "prop-types";
-import CONFIG from "@/config/constants";
-import COLORS from "@/config/colors";
+import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
+import { COLORS } from '@/config';
 import { ResponsiveContainer, 
   RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 import styles from "./ScoreChart.module.scss";
-
-const chartWidth = CONFIG.SMALL_CHART_WIDTH;
-const chartHeight = CONFIG.SMALL_CHART_HEIGHT;
 
 const ScoreChart = ({ scoreData }) => {
   // Convert score to percentage and create data for radial bar
@@ -16,7 +13,7 @@ const ScoreChart = ({ scoreData }) => {
 
   return (
     <div className={styles.scoreChartContainer}>
-      <ResponsiveContainer width={chartWidth} height={chartHeight}>
+      <ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}>
         <RadialBarChart
           cx="50%"
           cy="50%"

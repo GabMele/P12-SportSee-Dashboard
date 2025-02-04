@@ -1,12 +1,9 @@
 // src/components/MainContent/UserCharts/Charts/SessionChart.jsx
 import PropTypes from "prop-types";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import COLORS from "@/config/colors";
-import CONFIG from "@/config/constants";
+import { COLORS }from "@/config";
+import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
 import styles from "./SessionChart.module.scss";
-
-const chartWidth = CONFIG.SMALL_CHART_WIDTH;
-const chartHeight = CONFIG.SMALL_CHART_HEIGHT;
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -32,12 +29,18 @@ CustomTooltip.propTypes = {
 const SessionChart = ({ sessionData }) => {
   return (
     <div className={styles.sessionChartContainer}>
-      <ResponsiveContainer width={chartWidth} height={chartHeight - 20} className="chart">
+      <ResponsiveContainer 
+        width={SMALL_CHART_WIDTH} 
+        height={SMALL_CHART_HEIGHT - 20} 
+        className="chart"> 
         <LineChart data={sessionData}>
           <XAxis dataKey="day" tick={{ fill: COLORS.TERTIARY }} />
           <YAxis hide />
           <Tooltip content={<CustomTooltip />} />
-          <Line type="monotone" dataKey="sessionLength" stroke={COLORS.TERTIARY} strokeWidth={2} />
+          <Line type="monotone" 
+            dataKey="sessionLength" 
+            stroke={COLORS.TERTIARY} 
+            strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     </div>

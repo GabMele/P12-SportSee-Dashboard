@@ -1,5 +1,3 @@
-// src/config/constants.js
-
 const TRANSLATIONS = {
   DAYS_ABREVIATIONS: {
     FR: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
@@ -21,7 +19,7 @@ const TRANSLATIONS = {
       4: 'Force',
       5: 'Speed',
       6: 'Intensity'
-    }   
+    }
   },
   CHARTS_LABELS: {
     FR: {
@@ -41,11 +39,7 @@ export const getLanguage = () => {
   return localStorage.getItem('language') || 'FR';
 };
 
-const CONFIG = {
-  DAYS_ABREVIATIONS: TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()],
-  PERFORMANCE_LABELS: TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()],
-  CHARTS_LABELS: TRANSLATIONS.CHARTS_LABELS[getLanguage()]
-};
-
-export default CONFIG;
-
+// Export language-specific constants
+export const DAYS_ABREVIATIONS = TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()];
+export const PERFORMANCE_LABELS = TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()];
+export const CHARTS_LABELS = TRANSLATIONS.CHARTS_LABELS[getLanguage()];

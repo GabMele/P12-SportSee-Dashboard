@@ -2,19 +2,19 @@
 .keyDataSidebar {
     display: flex;
     flex-direction: column;
-    gap: 20px; // Space between each key data item
+    justify-content: space-between;
+    gap: 30px; // Space between each key data item
     padding: 20px;
     background-color: #fbfbfb; // Light background for the sidebar
     border-radius: 10px; // Rounded corners
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
   }
   
   .keyDataItem {
     display: flex;
     align-items: center;
-    gap: 15px; // Space between icon and text
-    padding: 10px;
-    background-color: #ffffff; // White background for each item
+    gap: 30px; // Space between icon and text
+    padding: 20px;
+    background-color: var(--light-background);
     border-radius: 5px; // Rounded corners for each item
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Subtle shadow for each item
   }

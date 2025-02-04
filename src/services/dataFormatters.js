@@ -1,11 +1,5 @@
 // src/services/dataFormatters.js
-import CONFIG from '@/config/constants';
-
-const {  
-  DAYS_ABREVIATIONS,
-  PERFORMANCE_LABELS
-} = CONFIG;
-
+import { DAYS_ABREVIATIONS, PERFORMANCE_LABELS } from '@/config';
 
 // Format user personal informations
 const formatUserData = ({ userInfos, todayScore, score, keyData }) => ({

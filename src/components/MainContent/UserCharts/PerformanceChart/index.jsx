@@ -4,17 +4,17 @@ import {
   ResponsiveContainer, RadarChart, Radar, PolarGrid,
   PolarAngleAxis, PolarRadiusAxis, Tooltip
 } from "recharts";
-import COLORS from "@/config/colors";
-import CONFIG from "@/config/constants";
+import { COLORS } from '@/config';
+import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
 import styles from "./PerformanceChart.module.scss";
 
-const chartWidth = CONFIG.SMALL_CHART_WIDTH;
-const chartHeight = CONFIG.SMALL_CHART_HEIGHT;
+// const chartWidth = SMALL_CHART_WIDTH;
+// const chartHeight = SMALL_CHART_HEIGHT;
 
 const PerformanceChart = ({ performanceData }) => (
   <div className={styles.performanceChartContainer}>
-    <ResponsiveContainer width={chartWidth} height={chartHeight}> {/* Increased height */}
-      <RadarChart outerRadius={(chartWidth + chartHeight)/7.5} 
+    <ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}> {/* Increased height */}
+      <RadarChart outerRadius={(SMALL_CHART_WIDTH + SMALL_CHART_HEIGHT)/7.5} 
             data={performanceData}> 
         <PolarGrid stroke={COLORS.TERTIARY} />
         <PolarAngleAxis 

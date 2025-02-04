@@ -1,6 +1,7 @@
 import DataLoader from './DataLoader';
 import UserCharts from './UserCharts';
 import KeyDataSidebar from "./KeyDataSidebar";
+import { SMALL_CHART_WIDTH } from '@/config';
 import styles from './MainContent.module.scss';
 
 const MainContent = () => {
@@ -41,18 +42,19 @@ const MainContent = () => {
 
               <div className={styles.dataDisplay}>
 
-              <div className={styles.charts}>
-                <UserCharts 
-                  activityData={data.activity}
-                  scoreData={data.user.todayScore}
-                  sessionData={data.averageSessions}
-                  performanceData={data.performance}  
-                />
-              </div>
-              
-              <div className={styles.rightBar}>
-                <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
-              </div>
+                <div className={styles.charts}  
+                  style={{ minWidth: `${(SMALL_CHART_WIDTH / 180) * 550}px` }}>
+                  <UserCharts 
+                    activityData={data.activity}
+                    scoreData={data.user.todayScore}
+                    sessionData={data.averageSessions}
+                    performanceData={data.performance}  
+                  />
+                </div>
+                
+                <div className={styles.rightBar}>
+                  <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
+                </div>
 
               </div>
 

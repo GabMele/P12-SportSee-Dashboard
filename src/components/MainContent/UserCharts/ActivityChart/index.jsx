@@ -6,11 +6,10 @@ import { ResponsiveContainer,
     CartesianGrid, 
     Tooltip, Legend 
 } from "recharts";
-import COLORS from "@/config/colors";
-import CONFIG from "@/config/constants";
+import { COLORS } from '@/config';
+import { CHARTS_LABELS } from '@/config';
 import styles from "./ActivityChart.module.scss";
 
-const { CHARTS_LABELS } = CONFIG;
 const barWidth = 8;
 const radius = [10, 10, 0, 0];
 
