@@ -49,8 +49,11 @@
  
  body {
    font-family: "Roboto", sans-serif;
-   color: variables.$text-color;
-   background-color: variables.$background-color;
    font-size: variables.$font-size-small;
    font-weight: variables.$font-weight-regular;
+
+   color: variables.$text-color;
+   background-color: variables.$background-color;
+
  }
+

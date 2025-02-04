@@ -22,6 +22,14 @@ const TRANSLATIONS = {
         5: 'Speed',
         6: 'Intensity'
       }   
+    },
+    CHARTS_LABELS: {
+      FR: {
+        "weight": "Poids",
+        "calories": "Calories brulées",
+        "activity": "Activité quotidienne"
+
+      }   
     }
   };
 
@@ -34,6 +42,9 @@ const CONFIG = {
     API_BASE_URL: 'http://localhost:3000',
     DAYS_ABREVIATIONS: TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()],
     PERFORMANCE_LABELS: TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()],
-};
+    CHARTS_LABELS: TRANSLATIONS.CHARTS_LABELS[getLanguage()],
+    SMALL_CHART_WIDTH: 200,
+    SMALL_CHART_HEIGHT: 200
+  };
 
 export default CONFIG;

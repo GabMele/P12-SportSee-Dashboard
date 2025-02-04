@@ -1,0 +1,10 @@
+// src/components/MainContent/UserCharts/PerformanceChart/PerformanceChart.module.scss
+@use "@/styles/variables.scss" as variables;
+
+.performanceChartContainer {
+  background-color: variables.$secondaryColor; // Use SCSS variable
+  width: 100%;
+  padding: 0px;
+  border-radius: variables.$chart-border-radius;
+  overflow: visible; // Prevent text cropping
+}

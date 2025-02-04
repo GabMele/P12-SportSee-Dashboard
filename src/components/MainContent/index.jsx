@@ -1,12 +1,9 @@
-// src/components/MainContent/index.jsx
 import DataLoader from './DataLoader';
-import DataRawDisplay from './DataRawDisplay';
-// import UserCharts from './UserCharts';
+import UserCharts from './UserCharts';
 import KeyDataSidebar from "./KeyDataSidebar";
 import styles from './MainContent.module.scss';
 
 const MainContent = () => {
-
   const defaultKeyData = {
     calorieCount: 0,
     proteinCount: 0,
@@ -15,37 +12,55 @@ const MainContent = () => {
   };
 
   return (
-    <DataLoader>
-      {({ data, error, loading }) => {
-        if (loading) return <div className={styles.spinner}></div>;
-        if (error) return <p>Error loading data: {error}</p>;
-        if (!data || !data.user) return <p>No data available.</p>;
+    <div className={styles.mainContainer}>
+      <DataLoader>
+        {({ data, error, loading }) => {
+          if (loading) 
+            return (
+              <div className={styles.spinnerContainer}>
+                <div className={styles.spinner}></div>
+              </div>
+            );
+          if (error) return <p>Error loading data: {error}</p>;
+          if (!data || !data.user) return <p>No data available.</p>;
 
-        return (
-          <>
-            <h1 className={styles.mainTitle}>Bonjour,&nbsp;
-            <span className={styles.mainTitle__name}>
-                { data.user.firstName }
-              </span>
-            </h1>
+          return (
+            <div className={styles.content}>
 
-            <DataRawDisplay data={data} error={error} loading={loading} />
+              <div className={styles.titleContainer}>
+                <h1 className={styles.mainTitle}>
+                  Bonjour,&nbsp;
+                  <span className={styles.mainTitle__name}>
+                    {data.user.firstName}
+                  </span>
+                </h1>
+                <p className={styles.mainTitle__subtitle}>
+                  Félicitations ! Vous avez explosé vos objectifs hier 👏
+                </p>
+              </div>
 
-            {/*}
-            <UserCharts 
-              activityData={ data.activity }
-              scoreData={ data.user.todayScore }
-              sessionData={ data.averageSessions }
-              performanceData={ data.performance }  
-            />
-            */}
-            
-            <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
+              <div className={styles.dataDisplay}>
 
-          </>
-        )
-      }}
-    </DataLoader>
+              <div className={styles.charts}>
+                <UserCharts 
+                  activityData={data.activity}
+                  scoreData={data.user.todayScore}
+                  sessionData={data.averageSessions}
+                  performanceData={data.performance}  
+                />
+              </div>
+              
+              <div className={styles.rightBar}>
+                <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
+              </div>
+
+              </div>
+
+            </div>
+          );
+        }}
+      </DataLoader>
+    </div>
   );
 };
 

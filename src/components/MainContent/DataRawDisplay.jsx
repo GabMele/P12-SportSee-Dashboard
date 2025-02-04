@@ -24,7 +24,7 @@ DataRawDisplay.propTypes = {
     user: PropTypes.object,
     activity: PropTypes.object,
     averageSessions: PropTypes.array,
-    performance: PropTypes.object,
+    performance: PropTypes.array,
   }),
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,

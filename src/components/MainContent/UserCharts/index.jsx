@@ -1,61 +1,29 @@
-// src/components/MainContent/UserCharts/index.jsx
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip,
-  RadialBarChart, RadialBar, LineChart, Line,
-  ResponsiveContainer
-} from "recharts";
 import PropTypes from "prop-types";
+import ActivityChart from "./ActivityChart";
+import ScoreChart from "./ScoreChart";
+import SessionChart from "./SessionChart";
+import PerformanceChart from "./PerformanceChart";
 import styles from "./UserCharts.module.scss";
 
-
 const UserCharts = ({ activityData, scoreData, sessionData, performanceData }) => (
-    <div className={styles.charts}>
-
-      {/* Activity chart */}
-      <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={activityData.sessions}>
-          <XAxis dataKey="day" />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="kilogram" fill="#282D30" />
-          <Bar dataKey="calories" fill="#E60000" />
-        </BarChart>
-      </ResponsiveContainer>
-
-      {/* Score chart */}
-      <ResponsiveContainer width="100%" height={250}>
-        <RadialBarChart innerRadius="70%" outerRadius="90%" 
-          data={[{ name: "Score", value: scoreData * 100, fill: "#E60000" }]}
-        >
-          <RadialBar minAngle={15} dataKey="value" />
-        </RadialBarChart>
-      </ResponsiveContainer>
-
-      {/* Session chart */}
-      <ResponsiveContainer width="100%" height={250}>
-        <LineChart data={sessionData}>
-          <XAxis dataKey="day" />
-          <YAxis hide />
-          <Tooltip />
-          <Line type="monotone" dataKey="sessionLength" 
-            stroke="#FF0000" strokeWidth={2} 
-          />
-        </LineChart>
-      </ResponsiveContainer>
-
-      {/* Performance chart */}
-      <ResponsiveContainer width="100%" height={250}>
-        <LineChart data={performanceData}>
-          <XAxis dataKey="kind" />
-          <YAxis hide />
-          <Tooltip />
-          <Tooltip />
-          <Line type="monotone" dataKey="value" 
-          stroke="#FF0000" strokeWidth={2} 
-          />
-          </LineChart>
-      </ResponsiveContainer>
+  <div className={styles.chartsContainer}>
+    <div className={styles.chartsFullWidthRow}>
+      <div className={styles.chartContainer}>
+        <ActivityChart activityData={activityData} />
+      </div>
     </div>
+    <div className={styles.chartsSmallsRow}>
+      <div className={styles.chartContainer}>
+        <SessionChart sessionData={sessionData} />
+      </div>
+      <div className={styles.chartContainer}>
+        <PerformanceChart performanceData={performanceData} />
+      </div>
+      <div className={styles.chartContainer}>
+        <ScoreChart scoreData={scoreData} />
+      </div>
+    </div>
+  </div>
 );
 
 UserCharts.propTypes = {

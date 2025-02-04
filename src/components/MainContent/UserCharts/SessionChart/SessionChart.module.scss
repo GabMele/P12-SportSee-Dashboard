@@ -1,0 +1,12 @@
+@use "@/styles/variables.scss" as variables;
+
+.sessionChartContainer {
+  background-color: variables.$primaryColor;
+  color: variables.$tertiaryColor;
+  padding: 10px;
+  border-radius: variables.$chart-border-radius;
+}
+
+.chart {
+width: 50px; 
+}

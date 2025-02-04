@@ -1,6 +1,30 @@
 // src/components/MainContent/UserCharts/UserCharts.module.scss
+@use "@/styles/variables.scss" as variables;
+
+
 .charts {
+  &Container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    max-width: 720px;
+    min-width: 500px;
+  }
+  &FullWidthRow {
+    width: 100%;
+  }
+  &SmallsRow {
     display: flex;
     justify-content: space-between;
     gap: 20px;
   }
+}
+
+.chartContainer {
+  //width: 100%;
+  //flex: 1;
+  //padding: 10px;
+  border-radius: variables.$chart-border-radius;
+  //overflow: visible; // Prevent text cropping
+}

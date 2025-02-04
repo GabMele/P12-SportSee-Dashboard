@@ -11,14 +11,23 @@
  * @namespace Variables
  */
 
+ :root {
+    --color-primary: #FF0000;
+    --color-secondary: #282D30;
+    --color-tertiary: #FFFFFF;
+  }
+
+
 // Breakpoints
 $breakpoint-mobile: 640px;
 
 // SCSS Variables
-// $primary-color: #222222; // Primary color used for key elements
-// $secondary-color: #eaeaea; // Secondary color for backgrounds or borders
+$primaryColor: var(--color-primary);
+$secondaryColor: var(--color-secondary);
+$tertiaryColor: var(--color-tertiary);
+
 $background-color: #ffffff; // Background color of the app
-$text-color: #222; // Default text color
+$text-color: #282D30; // Default text color
 // $highlight-color: #FFFFFF; // Highlight color for emphasized text
 // $highlight-background: $primary-color; // Background color for highlighted elements
 
@@ -31,3 +40,5 @@ $font-size-x-large: 2.1rem; // Extra large font size
 
 $font-weight-regular: 400; // Medium font weight
 $font-weight-bold: 700; // Bold font weight
+
+$chart-border-radius: 6px;

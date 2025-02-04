@@ -1,0 +1,14 @@
+// src/components/MainContent/UserCharts/ActivityChart/ActivityChart.module.scss
+@use "@/styles/variables.scss" as variables;
+
+.container {
+  margin : 20px -10px 0px -60px;
+  position: relative;
+  background-color: variables.$tertiaryColor;
+}
+
+.titleContainer {
+  position: absolute;
+  top: -45px;
+  left: 70px;
+}

@@ -1,5 +1,5 @@
 // src/services/dataFormatters.js
-import CONFIG from '../config/constants';
+import CONFIG from '@/config/constants';
 
 const {  
   DAYS_ABREVIATIONS,
@@ -40,12 +40,21 @@ const formatUserAverageSessions = ({ sessions }) =>
   }));
 
 // Format user performance data
-const formatUserPerformance = ({ data }) => ({
-  data: data.map(({ kind: kindIndex, value }) => ({
+// const formatUserPerformance = ({ data }) => ({
+//   data: data.map(({ kind: kindIndex, value }) => ({
+//     kind: PERFORMANCE_LABELS[kindIndex], 
+//     value,
+//   })),
+// });
+
+// Format user performance data
+const formatUserPerformance = ({ data }) => 
+  data.map(({ kind: kindIndex, value }) => ({
     kind: PERFORMANCE_LABELS[kindIndex], 
     value,
-  })),
-});
+  }))
+
+
 
 export { 
   formatUserData, 
