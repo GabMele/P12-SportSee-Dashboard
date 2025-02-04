@@ -43,7 +43,7 @@ const MainContent = () => {
               <div className={styles.dataDisplay}>
 
                 <div className={styles.charts}  
-                  style={{ minWidth: `${(SMALL_CHART_WIDTH / 180) * 550}px` }}>
+                  style={{ minWidth: `${(SMALL_CHART_WIDTH / 180) * 600}px` }}>
                   <UserCharts 
                     activityData={data.activity}
                     scoreData={data.user.todayScore}

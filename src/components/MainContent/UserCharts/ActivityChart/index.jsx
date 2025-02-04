@@ -29,6 +29,7 @@ const ActivityChart = ({ activityData }) => (
           yAxisId="left" 
           axisLine={false}  // Hide the axis line
           tick={false}      // Hide the ticks/labels
+          width={10} 
         />
         {/* Right Y-Axis for Calories */}
         <YAxis 
