@@ -30,12 +30,9 @@ const SessionChart = ({ sessionData }) => {
   // console.log("sessionData:", sessionData);
   return (
     <div className={styles.sessionChartContainer}>
-      <ResponsiveContainer 
-        width={SMALL_CHART_WIDTH} 
-        height={SMALL_CHART_HEIGHT - 20} 
-      > 
+<ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}>
         <LineChart data={sessionData} 
-        margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+        margin={{ top: 10, right: 10, bottom: 0, left: 10 }}>
           <XAxis dataKey="day" 
             tick={{ fill: COLORS.TERTIARY }}
           />

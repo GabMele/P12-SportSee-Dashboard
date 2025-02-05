@@ -13,19 +13,18 @@ const ScoreChart = ({ scoreData }) => {
 
   return (
     <div className={styles.scoreChartContainer}>
-      <ResponsiveContainer 
-        width={SMALL_CHART_WIDTH} 
-        height={SMALL_CHART_HEIGHT}>
-        <RadialBarChart
-          cx="50%"
-          cy="50%"
-          innerRadius="70%"
-          outerRadius="90%"
-          barSize={10}
-          data={data}
-          startAngle={180}
-          endAngle={-180}
-        >
+        <ResponsiveContainer width={SMALL_CHART_WIDTH} 
+          height={SMALL_CHART_HEIGHT}>
+          <RadialBarChart
+            cx="50%"
+            cy="50%"
+            innerRadius="70%"
+            outerRadius="90%"
+            barSize={10}
+            data={data}
+            startAngle={180}
+            endAngle={-180}
+          >
           <RadialBar
             minAngle={15}
             dataKey="value"

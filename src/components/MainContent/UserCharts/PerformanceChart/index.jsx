@@ -10,11 +10,12 @@ import styles from "./PerformanceChart.module.scss";
 
 // const chartWidth = SMALL_CHART_WIDTH;
 // const chartHeight = SMALL_CHART_HEIGHT;
+//    <ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}>
 
 const PerformanceChart = ({ performanceData }) => (
   <div className={styles.performanceChartContainer}>
-    <ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}> {/* Increased height */}
-      <RadarChart outerRadius={(SMALL_CHART_WIDTH + SMALL_CHART_HEIGHT)/7.5} 
+<ResponsiveContainer width={SMALL_CHART_WIDTH+20} height={SMALL_CHART_HEIGHT+20}>
+      <RadarChart outerRadius={(SMALL_CHART_WIDTH + SMALL_CHART_HEIGHT)/7.2} 
             data={performanceData}> 
         <PolarGrid stroke={COLORS.TERTIARY} />
         <PolarAngleAxis 

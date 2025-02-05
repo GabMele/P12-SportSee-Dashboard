@@ -53,10 +53,8 @@ const MainContent = () => {
                   />
                 </div>
                 
-                <div className={styles.rightBar}>
-                  <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
-                </div>
-
+                <KeyDataSidebar keyData={data.user.keyData || defaultKeyData} />
+                
               </div>
 
             </div>
