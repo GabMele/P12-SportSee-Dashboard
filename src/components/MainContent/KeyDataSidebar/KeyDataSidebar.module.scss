@@ -1,18 +1,19 @@
 // src/components/MainContent/KeyDataSidebar/KeyDataSidebar.module.scss
+@use "@/styles/variables.scss" as variables;
+
+
 .keyDataSidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 30px; // Space between each key data item
-    padding: 20px;
-    background-color: #fbfbfb; // Light background for the sidebar
-    border-radius: 10px; // Rounded corners
+    padding: 15px;
   }
   
   .keyDataItem {
     display: flex;
     align-items: center;
-    gap: 30px; // Space between icon and text
+    gap: 15px; // Space between icon and text
     padding: 20px;
     background-color: var(--light-background);
     border-radius: 5px; // Rounded corners for each item
@@ -45,15 +46,15 @@
   }
   
   .keyDataValue {
-    font-size: 18px; // Size of the value text
+    font-size: variables.$font-size-medium;
     font-weight: bold; // Bold for emphasis
-    color: #282d30; // Dark color for the value
+    color: variables.$secondaryColor;
     margin: 0; // Remove default margin
   }
   
   .keyDataLabel {
-    font-size: 14px; // Size of the label text
-    color: #74798c; // Lighter color for the label
+    font-size: variables.$font-size-small;
+    color: #74798c; 
     margin: 0; // Remove default margin
   }
 

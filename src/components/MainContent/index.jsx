@@ -1,7 +1,7 @@
 import DataLoader from './DataLoader';
 import UserCharts from './UserCharts';
 import KeyDataSidebar from "./KeyDataSidebar";
-import { SMALL_CHART_WIDTH, CHART_GAPS } from '@/config';
+import { SMALL_CHART_WIDTH, CHARTS_GAPS } from '@/config';
 import { HOMEPAGE_LABELS } from '../../config';
 import styles from './MainContent.module.scss';
 
@@ -44,7 +44,7 @@ const MainContent = () => {
               <div className={styles.dataDisplay}>
 
                 <div className={styles.charts}  
-                  style={{ minWidth: `${(SMALL_CHART_WIDTH * 3) + CHART_GAPS}px` }}>
+                  style={{ minWidth: `${(SMALL_CHART_WIDTH * 3) + CHARTS_GAPS}px` }}>
                   <UserCharts 
                     activityData={data.activity}
                     scoreData={data.user.todayScore}

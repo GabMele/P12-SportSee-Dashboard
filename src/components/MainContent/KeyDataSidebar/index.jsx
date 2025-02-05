@@ -16,7 +16,9 @@ const keyDataIcons = {
   lipidCount: FaHamburger,
 };
 
-const formatLabel = (key) => KEYDATA_LABELS[key.replace("Count", "")];
+const getKeyData = (key) => KEYDATA_LABELS[key.replace("Count", "")];
+const formatLabel = (key) => getKeyData(key).label;
+const formatUnit = (key) => getKeyData(key).unit;
 
 const KeyDataSidebar = ({ keyData }) => {
   return (
@@ -30,7 +32,7 @@ const KeyDataSidebar = ({ keyData }) => {
               className={`${styles.icon} ${styles[key]}`} 
             />
             <div>
-              <p className={styles.keyDataValue}>{value}</p>
+              <p className={styles.keyDataValue}>{value}{formatUnit(key)}</p>
               <p className={styles.keyDataLabel}>{formatLabel(key)}</p>
             </div>
           </div>

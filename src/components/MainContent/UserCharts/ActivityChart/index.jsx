@@ -35,6 +35,7 @@ const ActivityChart = ({ activityData }) => (
         <YAxis 
           yAxisId="right" 
           orientation="right"
+          width={40} 
           tickFormatter={(value) => `${value}`} />
         <CartesianGrid strokeDasharray="3" vertical={false} />
         <Legend 

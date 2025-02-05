@@ -35,16 +35,16 @@ const TRANSLATIONS = {
   },
   KEYDATA_LABELS: {
     FR: {
-      calorie: "Calories",
-      protein:"Proteines",
-      carbohydrate: "Glucides",
-      lipid: "Lipides"
+      calorie: { label: "Calories", unit: "kCal" },
+      protein: { label: "Proteines", unit: "g" },
+      carbohydrate: { label: "Glucides", unit: "g" },
+      lipid: { label: "Lipides", unit: "g" }
     },
     EN: {
-      calorie: "Calories",
-      protein:"Proteins",
-      carbohydrate: "Carbohydrates",
-      lipid: "Lipids"
+      calorie: { label: "Calories", unit: "kCal" },
+      protein: { label: "Proteins", unit: "g" },
+      carbohydrate: { label: "Carbohydrates", unit: "g" },
+      lipid: { label: "Lipids", unit: "g" }
     }
   },
   HOMEPAGE_LABELS: {
@@ -69,3 +69,4 @@ export const DAYS_ABREVIATIONS = TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()];
 export const PERFORMANCE_LABELS = TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()];
 export const CHARTS_LABELS = TRANSLATIONS.CHARTS_LABELS[getLanguage()];
 export const KEYDATA_LABELS = TRANSLATIONS.KEYDATA_LABELS[getLanguage()];
+

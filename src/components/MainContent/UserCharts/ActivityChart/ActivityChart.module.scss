@@ -3,12 +3,13 @@
 
 .container {
   margin : 0px 0px 0px 0px;
+  padding: 50px 10px 5px 10px;
   position: relative;
   background-color: variables.$tertiaryColor;
 }
 
 .titleContainer {
   position: absolute;
-  top: -45px;
-  left: 10px;
+  top: 5px;
+  left: 20px;
 }
