@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { KEYDATA_LABELS } from "@/config";
 import {
   FaFire, 
   FaDrumstickBite, 
@@ -15,7 +16,7 @@ const keyDataIcons = {
   lipidCount: FaHamburger,
 };
 
-const formatLabel = (key) => key.replace("Count", "");
+const formatLabel = (key) => KEYDATA_LABELS[key.replace("Count", "")];
 
 const KeyDataSidebar = ({ keyData }) => {
   return (

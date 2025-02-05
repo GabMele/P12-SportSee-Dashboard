@@ -1,6 +1,6 @@
 // src/hooks/useUserData.js
 import { useState, useEffect } from 'react';
-import { fetchUserData } from '../services/apiService';
+import { getUserData as fetchUserData } from '../services/dataService';
 import {
   formatUserData,
   formatUserActivity,

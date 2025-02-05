@@ -27,18 +27,22 @@ CustomTooltip.propTypes = {
 };
 
 const SessionChart = ({ sessionData }) => {
+  // console.log("sessionData:", sessionData);
   return (
     <div className={styles.sessionChartContainer}>
       <ResponsiveContainer 
         width={SMALL_CHART_WIDTH} 
         height={SMALL_CHART_HEIGHT - 20} 
-        className="chart"> 
-        <LineChart data={sessionData}>
-          <XAxis dataKey="day" tick={{ fill: COLORS.TERTIARY }} />
+      > 
+        <LineChart data={sessionData} 
+        margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
+          <XAxis dataKey="day" 
+            tick={{ fill: COLORS.TERTIARY }}
+          />
           <YAxis hide />
           <Tooltip content={<CustomTooltip />} />
           <Line type="monotone" 
-            dataKey="sessionLength" 
+            dataKey="sessionLength"
             stroke={COLORS.TERTIARY} 
             strokeWidth={2} />
         </LineChart>

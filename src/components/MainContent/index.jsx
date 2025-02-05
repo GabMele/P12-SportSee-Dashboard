@@ -1,7 +1,8 @@
 import DataLoader from './DataLoader';
 import UserCharts from './UserCharts';
 import KeyDataSidebar from "./KeyDataSidebar";
-import { SMALL_CHART_WIDTH } from '@/config';
+import { SMALL_CHART_WIDTH, CHART_GAPS } from '@/config';
+import { HOMEPAGE_LABELS } from '../../config';
 import styles from './MainContent.module.scss';
 
 const MainContent = () => {
@@ -30,20 +31,20 @@ const MainContent = () => {
 
               <div className={styles.titleContainer}>
                 <h1 className={styles.mainTitle}>
-                  Bonjour,&nbsp;
+                  {HOMEPAGE_LABELS.greeting},&nbsp;
                   <span className={styles.mainTitle__name}>
                     {data.user.firstName}
                   </span>
                 </h1>
                 <p className={styles.mainTitle__subtitle}>
-                  Félicitations ! Vous avez explosé vos objectifs hier 👏
+                  {HOMEPAGE_LABELS.congratulations}
                 </p>
               </div>
 
               <div className={styles.dataDisplay}>
 
                 <div className={styles.charts}  
-                  style={{ minWidth: `${(SMALL_CHART_WIDTH / 180) * 600}px` }}>
+                  style={{ minWidth: `${(SMALL_CHART_WIDTH * 3) + CHART_GAPS}px` }}>
                   <UserCharts 
                     activityData={data.activity}
                     scoreData={data.user.todayScore}

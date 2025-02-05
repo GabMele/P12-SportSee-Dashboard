@@ -32,14 +32,40 @@ const TRANSLATIONS = {
       calories: "Calories burned",
       activity: "Daily activity"
     }
+  },
+  KEYDATA_LABELS: {
+    FR: {
+      calorie: "Calories",
+      protein:"Proteines",
+      carbohydrate: "Glucides",
+      lipid: "Lipides"
+    },
+    EN: {
+      calorie: "Calories",
+      protein:"Proteins",
+      carbohydrate: "Carbohydrates",
+      lipid: "Lipids"
+    }
+  },
+  HOMEPAGE_LABELS: {
+    FR: {
+      greeting: "Bonjour",
+      congratulations: "Félicitation ! Vous avez explosé vos objectifs hier 👏",
+    },
+    EN: {
+      greeting: "Hello",
+      congratulations: "Congratulations! You crushed your goals yesterday 👏",
+    }
   }
 };
 
 export const getLanguage = () => {
-  return localStorage.getItem('language') || 'FR';
+  return localStorage.getItem('language') || 'EN';
 };
 
 // Export language-specific constants
+export const HOMEPAGE_LABELS = TRANSLATIONS.HOMEPAGE_LABELS[getLanguage()];
 export const DAYS_ABREVIATIONS = TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()];
 export const PERFORMANCE_LABELS = TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()];
 export const CHARTS_LABELS = TRANSLATIONS.CHARTS_LABELS[getLanguage()];
+export const KEYDATA_LABELS = TRANSLATIONS.KEYDATA_LABELS[getLanguage()];
