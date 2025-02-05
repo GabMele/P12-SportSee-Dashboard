@@ -1,3 +1,5 @@
+const DEFAULT_LANGUAGE = 'FR';
+
 const TRANSLATIONS = {
   DAYS_ABREVIATIONS: {
     FR: ['L', 'M', 'M', 'J', 'V', 'S', 'D'],
@@ -60,7 +62,7 @@ const TRANSLATIONS = {
 };
 
 export const getLanguage = () => {
-  return localStorage.getItem('language') || 'EN';
+  return localStorage.getItem('language') || DEFAULT_LANGUAGE;
 };
 
 // Export language-specific constants
