@@ -1,7 +1,7 @@
 // src/components/MainContent/UserCharts/PerformanceChart/index.jsx
 import PropTypes from "prop-types";
 import {
-  ResponsiveContainer, RadarChart, Radar, PolarGrid,
+  RadarChart, Radar, PolarGrid,
   PolarAngleAxis, PolarRadiusAxis, Tooltip
 } from "recharts";
 import { COLORS } from '@/config';
@@ -14,9 +14,11 @@ import styles from "./PerformanceChart.module.scss";
 
 const PerformanceChart = ({ performanceData }) => (
   <div className={styles.performanceChartContainer}>
-<ResponsiveContainer width={SMALL_CHART_WIDTH+20} height={SMALL_CHART_HEIGHT+20}>
-      <RadarChart outerRadius={(SMALL_CHART_WIDTH + SMALL_CHART_HEIGHT)/7.2} 
-            data={performanceData}> 
+      <RadarChart
+        width={SMALL_CHART_WIDTH+20}
+        height={SMALL_CHART_HEIGHT+20}
+        outerRadius={(SMALL_CHART_WIDTH + SMALL_CHART_HEIGHT)/7.2} 
+        data={performanceData}> 
         <PolarGrid stroke={COLORS.TERTIARY} />
         <PolarAngleAxis 
           dataKey="kind" 
@@ -36,7 +38,6 @@ const PerformanceChart = ({ performanceData }) => (
             fill={COLORS.PRIMARY} 
             fillOpacity={0.6} />
       </RadarChart>
-    </ResponsiveContainer>
   </div>
 );
 

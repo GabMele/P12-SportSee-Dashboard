@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
 import { COLORS } from '@/config';
-import { ResponsiveContainer, 
-  RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
+import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 import styles from "./ScoreChart.module.scss";
 
 const ScoreChart = ({ scoreData }) => {
@@ -13,9 +12,9 @@ const ScoreChart = ({ scoreData }) => {
 
   return (
     <div className={styles.scoreChartContainer}>
-        <ResponsiveContainer width={SMALL_CHART_WIDTH} 
-          height={SMALL_CHART_HEIGHT}>
           <RadialBarChart
+            width={SMALL_CHART_WIDTH}
+            height={SMALL_CHART_HEIGHT}
             cx="50%"
             cy="50%"
             innerRadius="70%"
@@ -38,7 +37,6 @@ const ScoreChart = ({ scoreData }) => {
             tick={false}
           />
         </RadialBarChart>
-      </ResponsiveContainer>
       <div className={styles.scoreLabel}>
         {(scoreData * 100).toFixed(0)}%
         <div className={styles.scoreDescription}>de votre objectif</div>

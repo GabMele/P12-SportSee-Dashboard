@@ -1,6 +1,6 @@
 // src/components/MainContent/UserCharts/Charts/SessionChart.jsx
 import PropTypes from "prop-types";
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
 import { COLORS }from "@/config";
 import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
 import styles from "./SessionChart.module.scss";
@@ -30,9 +30,12 @@ const SessionChart = ({ sessionData }) => {
   // console.log("sessionData:", sessionData);
   return (
     <div className={styles.sessionChartContainer}>
-<ResponsiveContainer width={SMALL_CHART_WIDTH} height={SMALL_CHART_HEIGHT}>
-        <LineChart data={sessionData} 
-        margin={{ top: 10, right: 10, bottom: 0, left: 10 }}>
+
+        <LineChart 
+          data={sessionData} 
+          margin={{ top: 10, right: 10, bottom: 0, left: 10 }}
+          width={SMALL_CHART_WIDTH} 
+          height={SMALL_CHART_HEIGHT}>
           <XAxis dataKey="day" 
             tick={{ fill: COLORS.TERTIARY }}
           />
@@ -43,7 +46,7 @@ const SessionChart = ({ sessionData }) => {
             stroke={COLORS.TERTIARY} 
             strokeWidth={2} />
         </LineChart>
-      </ResponsiveContainer>
+
     </div>
   );
 };
