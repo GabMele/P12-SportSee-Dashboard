@@ -5,15 +5,31 @@
  */
 import { Link } from 'react-router-dom';
 import styles from './ErrorPage.module.scss';
+import PropTypes from 'prop-types';
+import { ERRORPAGE_LABELS } from '@/config/translations';
 
-function ErrorPage() {
+function ErrorPage({ message }) {
   return (
     <div className={styles.errorPage}>
-      <h1 className={styles.errorPage__title}>404</h1>
-      <p className={styles.errorPage__message}>Oups ! La page que vous demandez n&apos;existe pas.</p>
-      <Link to="/" className={styles.errorPage__link}>Retourner sur la page d&apos;accueil</Link>
+      <h1 className={styles.errorPage__title}>
+        {ERRORPAGE_LABELS.title}
+      </h1>
+      <p className={styles.errorPage__message}>
+        {ERRORPAGE_LABELS.error} <br /><br />
+        {message === "dataNotFound" 
+          ? ERRORPAGE_LABELS.dataNotFound 
+          : ERRORPAGE_LABELS.errorgeneric}  
+        </p>
+      <Link to="/" className={styles.errorPage__link}>
+        {ERRORPAGE_LABELS.gobackhome}
+      </Link>
     </div>
   );
 }
+
+ErrorPage.propTypes = {
+  message: PropTypes.string,
+};
+
 
 export default ErrorPage;

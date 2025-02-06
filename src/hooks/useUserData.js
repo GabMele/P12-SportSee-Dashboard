@@ -27,7 +27,7 @@ const useUserData = () => {
           performance: formatUserPerformance(performance),
         });
       } catch (err) {
-        setError(err.message + 'With stack: ' + err.stack);
+        setError(err.message + ' - stack: ' + err.stack);
       } finally {
         setLoading(false);
       }

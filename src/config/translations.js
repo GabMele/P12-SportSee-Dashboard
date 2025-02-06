@@ -58,6 +58,22 @@ const TRANSLATIONS = {
       greeting: "Hello",
       congratulations: "Congratulations! You crushed your goals yesterday 👏",
     }
+  },
+  ERRORPAGE_LABELS: {
+    FR: {
+      title: "Oooops !",
+      error: "Une erreur s’est produite !",
+      errorgeneric: "Nous avions tout prévu... ou presque...",
+      dataNotFound: "Données introuvables",
+      gobackhome: "Retourner sur la page d'accueil"
+    },
+    EN: {
+      title: "Oops!",
+      error: "Sorry, something went wrong!",
+      errorgeneric: "We had everything planned... or almost...",
+      dataNotFound: "Data not found",
+      gobackhome: "Return to the homepage"
+    }
   }
 };
 
@@ -71,4 +87,5 @@ export const DAYS_ABREVIATIONS = TRANSLATIONS.DAYS_ABREVIATIONS[getLanguage()];
 export const PERFORMANCE_LABELS = TRANSLATIONS.PERFORMANCE_LABELS[getLanguage()];
 export const CHARTS_LABELS = TRANSLATIONS.CHARTS_LABELS[getLanguage()];
 export const KEYDATA_LABELS = TRANSLATIONS.KEYDATA_LABELS[getLanguage()];
+export const ERRORPAGE_LABELS = TRANSLATIONS.ERRORPAGE_LABELS[getLanguage()];
 

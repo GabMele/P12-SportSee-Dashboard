@@ -5,15 +5,15 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    height: 62vh;
+    height: 60vh;
     width: 80vw;
     margin: 0 auto;
   
     &__title {
-      font-size: 6rem;
+      font-size: variables.$font-size-x-large;
       color: variables.$primaryColor;
       margin: 0;
     }
@@ -21,11 +21,11 @@
     &__message {
       font-size: variables.$font-size-medium;
       margin-bottom: 20px;
-      color: variables.$primaryColor;
+      color: variables.$secondaryColor;
     }
   
     &__link {
-      font-size: variables.$font-size-small;
+      font-size: variables.$font-size-medium;
       text-decoration: none;
     }
   }

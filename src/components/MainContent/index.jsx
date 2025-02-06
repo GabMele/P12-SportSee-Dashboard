@@ -1,6 +1,7 @@
 import DataLoader from './DataLoader';
 import UserCharts from './UserCharts';
 import KeyDataSidebar from "./KeyDataSidebar";
+import ErrorPage from '@/components/ErrorPage';
 import { SMALL_CHART_WIDTH, CHARTS_GAPS } from '@/config';
 import { HOMEPAGE_LABELS } from '../../config';
 import styles from './MainContent.module.scss';
@@ -23,8 +24,10 @@ const MainContent = () => {
                 <div className={styles.spinner}></div>
               </div>
             );
-          if (error) return <p>Error loading data: {error}</p>;
-          if (!data || !data.user) return <p>No data available.</p>;
+
+          if (error || !data || !data.user) {
+            return <ErrorPage message={"dataNotFound"} />;
+          }
 
           return (
             <div className={styles.content}>
