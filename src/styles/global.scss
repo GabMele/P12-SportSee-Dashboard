@@ -43,8 +43,6 @@
    margin: 0;
    padding: 0;
    min-height: 100%;
-   display: flex;
-   flex-direction: column;
  }
  
  body {
@@ -57,3 +55,9 @@
 
  }
 
+/* This wrapper will center your content and limit the width */
+.appWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}

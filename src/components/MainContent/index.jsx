@@ -14,7 +14,7 @@ const MainContent = () => {
   };
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContentContainer}>
       <DataLoader>
         {({ data, error, loading }) => {
           if (loading) 

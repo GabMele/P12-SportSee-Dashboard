@@ -1,7 +1,7 @@
 // MainContent.module.scss
 @use "@/styles/variables.scss" as variables;
 
-.mainContainer {
+.mainContentContainer {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -35,11 +35,12 @@
 }
 
 .content {
+  flex: 1;
   margin: 0 auto;
-  padding: 40px 6%;
+  padding: 20px 60px;
   width: 100%;
-  max-width: 1200px;
   box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .titleContainer {
@@ -64,9 +65,9 @@
 .dataDisplay {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
   justify-content: space-between;
-  max-width: 960px;
+  max-width: 930px;
   width: 100%;
   min-width: 680px;
 }

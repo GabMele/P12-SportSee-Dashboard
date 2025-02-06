@@ -1,0 +1,35 @@
+// src/components/LeftBar/LeftBar.module.scss
+
+.leftBar {
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 117px;
+  min-height: 100vh;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.iconWrapper {
+  color: var(--color-primary);
+  background-color: var(--color-tertiary);
+  border-radius: 5px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 8px;
+}
+
+.oblique {
+  transform: rotate(45deg);
+}
