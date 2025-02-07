@@ -61,3 +61,5 @@ MIT License. See [LICENSE](LICENSE) for details.
 ---
 ✨ *Built with React & Recharts* ✨
 
+In case of errors "dataNotFound" consider removing all localstorage calls
+and use instead Constants or manage issue preventing DOM render before loading data from localstorage
