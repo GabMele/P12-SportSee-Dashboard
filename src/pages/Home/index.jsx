@@ -1,15 +1,13 @@
 // src/pages/Home/index.jsx
 
-import LeftBar from "../../components/LeftBar";
-import MainContent from "../../components/MainContent";
-import styles from "./Home.module.scss";
+import MainContent from "@/components/MainContent";
+import UserDashboardLayout from "@/components/UserDashboardLayout";
 
 const Home = () => {
   return (
-    <div className={styles.homeContainer}>
-      <LeftBar />
+    <UserDashboardLayout>
       <MainContent />
-    </div>
+    </UserDashboardLayout>
   );
 };
 

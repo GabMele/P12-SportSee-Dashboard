@@ -1,12 +1,13 @@
-import DataLoader from './DataLoader';
-import UserCharts from './UserCharts';
+import DataLoader from "./DataLoader";
+import UserCharts from "./UserCharts";
 import KeyDataSidebar from "./KeyDataSidebar";
-import ErrorPage from '@/components/ErrorPage';
-import { SMALL_CHART_WIDTH, CHARTS_GAPS } from '@/config';
-import { HOMEPAGE_LABELS } from '../../config';
-import styles from './MainContent.module.scss';
+import ErrorPage from "@/components/ErrorPage";
+import { SMALL_CHART_WIDTH, CHARTS_GAPS } from "@/config";
+import { HOMEPAGE_LABELS } from "../../config";
+import styles from "./MainContent.module.scss";
+import PropTypes from "prop-types";
 
-const MainContent = () => {
+const MainContent = ({ userId }) => {
   const defaultKeyData = {
     calorieCount: 0,
     proteinCount: 0,
@@ -16,9 +17,9 @@ const MainContent = () => {
 
   return (
     <div className={styles.mainContentContainer}>
-      <DataLoader>
+      <DataLoader userId={userId}>
         {({ data, error, loading }) => {
-          if (loading) 
+          if (loading)
             return (
               <div className={styles.spinnerContainer}>
                 <div className={styles.spinner}></div>
@@ -66,6 +67,10 @@ const MainContent = () => {
       </DataLoader>
     </div>
   );
+};
+
+MainContent.propTypes = {
+  userId: PropTypes.string.isRequired,
 };
 
 export default MainContent;
