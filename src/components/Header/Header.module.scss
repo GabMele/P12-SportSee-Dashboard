@@ -2,7 +2,7 @@
 @use "@/styles/variables.scss" as variables;
 
 .header {
-    background-color: variables.$secondaryColor;
+    background-color: var(--color-secondary);
     padding: 10px;
 
     color: white;

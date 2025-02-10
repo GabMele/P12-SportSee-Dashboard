@@ -14,14 +14,14 @@
   
     &__title {
       font-size: variables.$font-size-x-large;
-      color: variables.$primaryColor;
+      color: var(--color-primary);
       margin: 0;
     }
   
     &__message {
       font-size: variables.$font-size-medium;
       margin-bottom: 20px;
-      color: variables.$secondaryColor;
+      color: var(--color-secondary);
     }
   
     &__link {

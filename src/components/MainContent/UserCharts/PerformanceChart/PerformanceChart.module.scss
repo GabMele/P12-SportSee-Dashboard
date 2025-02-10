@@ -2,7 +2,7 @@
 @use "@/styles/variables.scss" as variables;
 
 .performanceChartContainer {
-  background-color: variables.$secondaryColor; // Use SCSS variable
+  background-color: var(--color-secondary);
   width: 100%;
   padding: 0px;
   border-radius: variables.$chart-border-radius;

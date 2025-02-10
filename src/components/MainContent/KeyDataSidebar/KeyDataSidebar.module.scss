@@ -48,7 +48,7 @@
   .keyDataValue {
     font-size: variables.$font-size-medium;
     font-weight: bold; // Bold for emphasis
-    color: variables.$secondaryColor;
+    color: var(--color-secondary);
     margin: 0; // Remove default margin
   }
   

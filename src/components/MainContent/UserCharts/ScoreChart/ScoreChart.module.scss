@@ -2,7 +2,7 @@
 
 .scoreChartContainer {
   position: relative;
-  background-color: variables.$tertiaryColor;
+  background-color: var(--color-tertiary);
   border-radius: variables.$chart-border-radius;
   padding: 0px;
   display: flex;
@@ -16,7 +16,7 @@
     position: absolute;
     top: -10px;
     left: 10%;
-    color: variables.$secondaryColor;
+    color: var(--color-secondary);
     font-size: variables.$font-size-medium;
     text-align: left;
   }
@@ -32,12 +32,12 @@
   font-size: variables.$font-size-large;
   font-weight: bold;
   text-align: center;
-  color: variables.$secondaryColor;
+  color: var(--color-secondary);
 }
 
 .scoreDescription {
   font-size: variables.$font-size-medium;
   font-weight: 400;
   text-align: center;
-  color: variables.$secondaryColor;
+  color: var(--color-secondary);
 }

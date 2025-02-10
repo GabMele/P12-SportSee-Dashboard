@@ -23,7 +23,7 @@
   width: 160px;
   height: 160px;
   border: 16px solid rgba(255, 0, 0, 0.1);
-  border-left-color: variables.$primaryColor;
+  color: var(--color-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -54,10 +54,10 @@
   font-size: variables.$font-size-x-large;
   margin-bottom: 0px;
   &__name {
-    color: variables.$primaryColor;
+    color: var(--color-primary);
   }
   &__subtitle {
-    color: variables.$secondaryColor;
+    color: var(--color-secondary);
     font-size: variables.$font-size-medium;
   }
 }

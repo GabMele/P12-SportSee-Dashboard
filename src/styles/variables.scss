@@ -22,14 +22,12 @@
 $breakpoint-mobile: 640px;
 
 // SCSS Variables
-$primaryColor: var(--color-primary);
-$secondaryColor: var(--color-secondary);
-$tertiaryColor: var(--color-tertiary);
+// $primaryColor: var(--color-primary);
+// $secondaryColor: var(--color-secondary);
+// $tertiaryColor: var(--color-tertiary);
 
 $background-color: #ffffff; // Background color of the app
-$text-color: #282D30; // Default text color
-// $highlight-color: #FFFFFF; // Highlight color for emphasized text
-// $highlight-background: $primary-color; // Background color for highlighted elements
+$text-color: var(--color-secondary); // Default text color
 
 // Font Sizes
 $font-size-x-small: 0.65rem; // Extra small font size

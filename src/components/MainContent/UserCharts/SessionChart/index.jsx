@@ -1,7 +1,7 @@
 // src/components/MainContent/UserCharts/Charts/SessionChart.jsx
 import PropTypes from "prop-types";
 import { LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import { COLORS }from "@/config";
+import { COLORS } from "@/config";
 import { SMALL_CHART_WIDTH, SMALL_CHART_HEIGHT } from '@/config';
 import styles from "./SessionChart.module.scss";
 
