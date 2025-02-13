@@ -4,54 +4,37 @@
 .header {
     background-color: var(--color-secondary);
     padding: 10px;
-
     color: white;
     display: flex;
-    //justify-content: space-between;
-    //align-items: center;
-    //width: 100%;
-    //margin: 0 auto;
-  }
-  
-  .logo {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
     width: 120px;
-    //height: auto;
     margin-right: 8%;
-  }
-  
-  .nav {
+}
+
+.nav {
     width: 80%;
-    //flex-grow: 1;
-    //display: flex;
-    //justify-content: center;
-  
+
     ul {
-      //flex-grow: 1;
-      display: flex;
-      justify-content: space-around;
-      list-style-type: none;
-      //margin: 0;
-      padding: 0;
-      //gap: 80px;
-      //width: 100%;
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 0;
     }
-  
-    li {
-      //margin-left: 10%;
-      //margin-right: 10%;
-      //flex-grow: 1;
-      //display: flex;
-      //align-items: center;
-    }
-  
+
     a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  
-      &:hover {
-        color: #ddd;
-        text-decoration: underline;
-      }
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #ddd;
+            text-decoration: underline;
+        }
     }
-  }
+}

@@ -1,32 +1,42 @@
-/* ErrorPage.module.scss */
+// src/components/ErrorPage/ErrorPage.module.scss
 @use '../../styles/variables.scss' as variables;
 
-.errorPage {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+  width: 80vw;
+  margin: 0 auto;
+}
+  
+.title {
+  font-size: variables.$font-size-x-large;
+  color: var(--color-primary);
+  margin: 0;
+}
+  
+.message {
+  font-size: variables.$font-size-medium;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+}
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 60vh;
-    width: 80vw;
-    margin: 0 auto;
-  
-    &__title {
-      font-size: variables.$font-size-x-large;
-      color: var(--color-primary);
-      margin: 0;
-    }
-  
-    &__message {
-      font-size: variables.$font-size-medium;
-      margin-bottom: 20px;
-      color: var(--color-secondary);
-    }
-  
-    &__link {
-      font-size: variables.$font-size-medium;
-      text-decoration: none;
-    }
+.icon {
+  margin-bottom: 20px;
+  color: #ff0000;
+  transition: transform 0.2s ease-in-out;
+  animation: swing 1.5s infinite ease-in-out;
+  transform-origin: 40px 100px;
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-15deg) translateY(10px);
   }
-  
+  50% {
+    transform: rotate(15deg);
+  }
+}

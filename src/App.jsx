@@ -1,14 +1,21 @@
 // src/App.js
-//import { getUserId } from '@/utils/getUserId';
+
+/**
+ * @module App
+ *
+ * @category Core
+ *
+ * @description
+ * The main application component that initializes routing using `AppRouter`.
+ *
+ * @returns {JSX.Element} The root component rendering the application router.
+ */
+
 import AppRouter from '@/router';        
 
-const App = ()=> {
-  // Refer to src/utils/getUserId.js 
-  //const userId = getUserId();
-
-  return (
-      <AppRouter/>
-  );
-}
+const App = () => {
+  return <AppRouter />;
+};
 
 export default App;
+

@@ -1,4 +1,24 @@
-import PropTypes from "prop-types";
+/**
+ * @module UserCharts
+ * @category Layout Components
+ * 
+ * @description
+ * The UserCharts component aggregates multiple charts as sub components that 
+ * display user-related data: it embeds various child components like ActivityChart,
+ * PerformanceChart, SessionChart, and ScoreChart to visualize the user's data.
+ * 
+ * The props required for this component are detailed in the `chartPropTypes.js` 
+ * file, which includes structures for activity data, session data, performance 
+ * metrics, and score data.
+ * 
+ * @see PropTypes chartPropTypes.js file for props documentation
+ * 
+ * @returns {JSX.Element} A component that renders multiple charts displaying 
+ * user data.
+ */
+
+import { sessionDataType, activityDataType, scoreDataType, 
+  performanceDataType } from "./chartPropTypes";
 import ActivityChart from "./ActivityChart";
 import ScoreChart from "./ScoreChart";
 import SessionChart from "./SessionChart";
@@ -27,28 +47,10 @@ const UserCharts = ({ activityData, scoreData, sessionData, performanceData }) =
 );
 
 UserCharts.propTypes = {
-  activityData: PropTypes.shape({
-    sessions: PropTypes.arrayOf(
-      PropTypes.shape({
-        day: PropTypes.number,
-        kilogram: PropTypes.number,
-        calories: PropTypes.number,
-      })
-    ),
-  }).isRequired,
-  scoreData: PropTypes.number.isRequired,
-  sessionData: PropTypes.arrayOf(
-    PropTypes.shape({
-      day: PropTypes.string,
-      sessionLength: PropTypes.number,
-    })
-  ).isRequired,
-  performanceData: PropTypes.arrayOf(
-    PropTypes.shape({
-      kind: PropTypes.string,
-      value: PropTypes.number,
-    })
-  ).isRequired,
+  activityData: activityDataType,
+  sessionData: sessionDataType,
+  performanceData: performanceDataType,
+  scoreData: scoreDataType,
 };
 
 export default UserCharts;

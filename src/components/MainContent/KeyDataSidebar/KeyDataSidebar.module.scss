@@ -27,19 +27,19 @@
     border-radius: 8px; // Optional: Rounded corners for the icon background
   
     // Dynamically generated classes (lowercase)
-    &.calorieCount { 
+    &.calorie { 
       color: #ff0101; 
       background-color: rgba(255, 0, 0, 0.1); // Light red background
     }
-    &.proteinCount { 
+    &.protein { 
       color: #4ab8ff; 
       background-color: rgba(74, 184, 255, 0.1); // Light blue background
     }
-    &.carbohydrateCount { 
+    &.carbohydrate { 
       color: #fdcc0c; 
       background-color: rgba(253, 204, 12, 0.1); // Light yellow background
     }
-    &.lipidCount { 
+    &.lipid { 
       color: #fd5181; 
       background-color: rgba(253, 81, 129, 0.1); // Light pink background
     }

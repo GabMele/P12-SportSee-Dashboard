@@ -6,7 +6,6 @@
  * This file imports the necessary variables and defines global styles 
  * for the application. 
  * 
- * @namespace GlobalStyles
  */
 
  @use "./variables.scss" as variables;
@@ -55,7 +54,6 @@
 
  }
 
-/* This wrapper will center your content and limit the width */
 .appWrapper {
   max-width: 1200px;
   width: 100%;

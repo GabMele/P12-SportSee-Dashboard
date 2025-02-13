@@ -74,10 +74,5 @@
 
 .charts {
   flex: 1; // Added to allow charts to grow and shrink properly
-  // min-width: 550px; // NOTE: value set in JSX
-}
-
-.rightBar {
-  //flex-shrink: 0; // Prevent sidebar from shrinking
-  //height: 100%;
+  // min-width: 550px; // NOTE: value calculated in JSX
 }

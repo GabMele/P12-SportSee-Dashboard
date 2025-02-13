@@ -1,16 +1,57 @@
 // src/components/MainContent/UserCharts/ActivityChart/index.jsx
-import PropTypes from "prop-types";
-import { ResponsiveContainer, 
-    BarChart, Bar,
-    XAxis, YAxis, 
-    CartesianGrid, 
-    Tooltip, Legend 
+
+/**
+ * @module ActivityChart
+ * @category Visual Components
+ * 
+ * @description
+ * The ActivityChart component renders a bar chart that displays activity data 
+ * such as weight (kilograms) and calories burned during sessions. It uses 
+ * recharts to visualize the data, showing two bars per session.
+ * 
+ * The labels for the chart are dynamically loaded from the CHARTS_LABELS 
+ * configuration, allowing for easy updates and localization.
+ * 
+ * @see PropTypes definition for detailed props documentation
+ * 
+ * @example
+ * const activityData = {
+ *   sessions: [
+ *     { day: 1, kilogram: 70, calories: 300 },
+ *     { day: 2, kilogram: 71, calories: 350 },
+ *     { day: 3, kilogram: 70, calories: 320 }
+ *   ]
+ * };
+ * 
+ * return <ActivityChart activityData={activityData} />;
+ * 
+ * @returns {JSX.Element} A bar chart displaying activity data.
+ */
+
+import { activityDataType } from '../chartPropTypes';
+import { 
+  ResponsiveContainer, 
+  BarChart, Bar,
+  XAxis, YAxis, 
+  CartesianGrid, 
+  Tooltip, Legend 
 } from "recharts";
 import { COLORS } from '@/config';
 import { CHARTS_LABELS } from '@/config';
 import styles from "./ActivityChart.module.scss";
 
+/**
+ * The width of each bar in the BarChart
+ * @constant
+ * @type {number}
+ */
 const barWidth = 8;
+
+/**
+ * Radius of the bar corners for rounded edges
+ * @constant
+ * @type {Array<number>}
+ */
 const radius = [10, 10, 0, 0];
 
 const ActivityChart = ({ activityData }) => (
@@ -22,21 +63,20 @@ const ActivityChart = ({ activityData }) => (
       <BarChart 
         data={activityData.sessions} 
         barGap={8}
-        >
+      >
         <XAxis dataKey="day" />
-        {/* Left Y-Axis for Kilograms (Hidden) */}
         <YAxis 
           yAxisId="left" 
-          axisLine={false}  // Hide the axis line
-          tick={false}      // Hide the ticks/labels
+          axisLine={false}
+          tick={false}
           width={10} 
         />
-        {/* Right Y-Axis for Calories */}
         <YAxis 
           yAxisId="right" 
           orientation="right"
           width={40} 
-          tickFormatter={(value) => `${value}`} />
+          tickFormatter={(value) => `${value}`} 
+        />
         <CartesianGrid strokeDasharray="3" vertical={false} />
         <Legend 
           layout="horizontal" 
@@ -46,7 +86,7 @@ const ActivityChart = ({ activityData }) => (
             position: 'absolute', 
             top: -30,      
             right: 20,         
-        }}
+          }}
           iconType="circle" 
           iconSize={8}
           formatter={(value) => 
@@ -56,23 +96,27 @@ const ActivityChart = ({ activityData }) => (
           }
         />
         <Tooltip />
-        <Bar dataKey="kilogram" fill={COLORS.SECONDARY} barSize={barWidth} radius={radius} yAxisId="right"/>
-        <Bar dataKey="calories" fill={COLORS.PRIMARY} barSize={barWidth} radius={radius} yAxisId="left"/>
+        <Bar 
+          dataKey="kilogram" 
+          fill={COLORS.SECONDARY} 
+          barSize={barWidth} 
+          radius={radius} 
+          yAxisId="right"
+        />
+        <Bar 
+          dataKey="calories" 
+          fill={COLORS.PRIMARY} 
+          barSize={barWidth} 
+          radius={radius} 
+          yAxisId="left"
+        />
       </BarChart>
     </ResponsiveContainer>
   </div>
 );
 
 ActivityChart.propTypes = {
-  activityData: PropTypes.shape({
-    sessions: PropTypes.arrayOf(
-      PropTypes.shape({
-        day: PropTypes.number,
-        kilogram: PropTypes.number,
-        calories: PropTypes.number,
-      })
-    ),
-  }).isRequired,
+  activityData: activityDataType
 };
 
 export default ActivityChart;

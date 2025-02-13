@@ -1,28 +1,44 @@
+// src/components/ErrorPage/index.jsx
+
 /**
- * Displays a 404 error page with a message and a link to the homepage.
+ * @module ErrorPage
  * 
- * @returns {JSX.Element} The error page layout.
+ * @category Visual Components
+ * 
+ * @description
+ * Displays an error page with a customizable error message.
+ * 
+ * This component relies on translations loaded from the `ERRORPAGE_LABELS` object, 
+ * which is sourced from the configuration file (`@/config/translations`). 
+ * 
+ * The `message` prop is used to display specific error messages:
+ * - `"dataNotFound"` will render a specific data error message.
+ * - Any other string or null will render a generic error message.
+ * 
+ * @param {string} [props.message] - A string indicating the specific error type. Accepts `"dataNotFound"` 
+ *                                    for a data-related error, or any other string for a generic error.
+ * 
+ * @returns {JSX.Element} The rendered error page with the error message.
+ * 
  */
-import { Link } from 'react-router-dom';
 import styles from './ErrorPage.module.scss';
+import { FaRegSadTear } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { ERRORPAGE_LABELS } from '@/config/translations';
 
 function ErrorPage({ message }) {
   return (
-    <div className={styles.errorPage}>
-      <h1 className={styles.errorPage__title}>
+    <div className={styles.container}>
+      <FaRegSadTear size={80} className={`${styles.icon} ${styles.sadIcon}`} />
+      <h1 className={styles.title}>
         {ERRORPAGE_LABELS.title}
       </h1>
-      <p className={styles.errorPage__message}>
+      <p className={styles.message}>
         {ERRORPAGE_LABELS.error} <br /><br />
-        {message === "dataNotFound" 
+        {message === "dataNotFound"
           ? ERRORPAGE_LABELS.dataNotFound 
-          : ERRORPAGE_LABELS.errorgeneric}  
-        </p>
-      <Link to="/" className={styles.errorPage__link}>
-        {ERRORPAGE_LABELS.gobackhome}
-      </Link>
+          : ERRORPAGE_LABELS.errorGeneric}  
+      </p>
     </div>
   );
 }
@@ -30,6 +46,5 @@ function ErrorPage({ message }) {
 ErrorPage.propTypes = {
   message: PropTypes.string,
 };
-
 
 export default ErrorPage;
